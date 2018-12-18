@@ -1,0 +1,59 @@
+%body
+  .alert
+    チャットグループが作成されました。
+
+  %div.side
+    %div.user-side
+      %div.user-side_content
+        %div.user-side_name
+          hosida
+        %a.user-side_new-group{:href =>""}
+          %i.fa.fa-pencil-square-o
+        %a.user-side_user-edit{:href =>""}
+          %i.fa.fa-cog
+    %div.groups-side
+      %div.groups-side_list
+        %div.groups-side_group
+          %div.groups-side_group-name
+            39_weekend fla
+          %div.groups-side_group-message
+            こんばんわ
+        %div.groups-side_group
+          %div.groups-side_group-name
+            &bsol;(^o^)/
+          %div.groups-side_group-message
+            owata
+
+
+  %div.chat
+    %div.chat-header
+      %div.chat-header_group.clearfix
+        %div.chat-header_group-name
+          39_weekend fla
+        %a.chat-header_group-edit{:href =>""}edit
+      %div.chat-header_member
+        MEMBER: hosida
+    %div.chat-body
+      %div.chat-body_list
+        %div.chat-body_message.clearfix
+          %div.chat-body_message-name
+            hosida
+          %div.chat-body_message-time
+            2018/12/16 16:16:16
+          %div.chat-body_message-body
+            こんばんわ
+        %div.chat-body_message.clearfix
+          %div.chat-body_message-name
+            hosida
+          %div.chat-body_message-time
+            2018/12/16 16:16:58
+          %div.chat-body_message-body
+            (;ω;)
+    %div.chat-footer
+      %div.chat-footer_form-body
+        %input.chat-footer_form-message{:name => "message[body]", :placeholder => "type a message", :type => "text"}
+        %label.chat-footer_file{:for => "message-image"}
+          %input.chat-footer_image{:name => "image[boy]", :type => "file"}
+          %i.fa.fa-image
+        %input.submit{:name => "commit", :type => "submit", :value => "send"}
+
