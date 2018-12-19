@@ -2,58 +2,58 @@
   .alert
     チャットグループが作成されました。
 
-  %div.side
-    %div.user-side
-      %div.user-side_content
-        %div.user-side_name
+  .side
+    .user-side
+      .user-side__content
+        .user-side__content_name
           hosida
-        %a.user-side_new-group{:href =>""}
+        %a.user-side__content_new-group{:href =>""}
           %i.fa.fa-pencil-square-o
-        %a.user-side_user-edit{:href =>""}
+        %a.user-side__content_user-edit{:href =>""}
           %i.fa.fa-cog
-    %div.groups-side
-      %div.groups-side_list
-        %div.groups-side_group
-          %div.groups-side_group-name
+    .groups-side
+      .groups-side___list
+        .groups-side___list__group
+          .groups-side___list__group_group-name
             39_weekend fla
-          %div.groups-side_group-message
+          .groups-side___list__group_message
             こんばんわ
-        %div.groups-side_group
-          %div.groups-side_group-name
+        .groups-side___list__group
+          .groups-side___list__group_group-name
             &bsol;(^o^)/
-          %div.groups-side_group-message
+          .groups-side___list__group_message
             owata
 
 
-  %div.chat
-    %div.chat-header
-      %div.chat-header_group.clearfix
-        %div.chat-header_group-name
+  .chat
+    .chat___header
+      .chat___header__group.clearfix
+        .chat___header__group_group-name
           39_weekend fla
-        %a.chat-header_group-edit{:href =>""}edit
-      %div.chat-header_member
+        %a.chat___header__group_edit{:href =>""}edit
+      .chat___header__member
         MEMBER: hosida
-    %div.chat-body
-      %div.chat-body_list
-        %div.chat-body_message.clearfix
-          %div.chat-body_message-name
+    .chat____body
+      .chat____body___list
+        .chat____body___list__message.clearfix
+          .chat____body___list__message_name
             hosida
-          %div.chat-body_message-time
+          .chat____body___list__message_time
             2018/12/16 16:16:16
-          %div.chat-body_message-body
+          .chat____body___list__message_body
             こんばんわ
-        %div.chat-body_message.clearfix
-          %div.chat-body_message-name
+        .chat____body___list__message.clearfix
+          .chat____body___list__message_name
             hosida
-          %div.chat-body_message-time
+          .chat____body___list__message_time
             2018/12/16 16:16:58
-          %div.chat-body_message-body
+          .chat____body___list__message_body
             (;ω;)
-    %div.chat-footer
-      %div.chat-footer_form-body
-        %input.chat-footer_form-message{:name => "message[body]", :placeholder => "type a message", :type => "text"}
-        %label.chat-footer_file{:for => "message-image"}
-          %input.chat-footer_image{:name => "image[boy]", :type => "file"}
+    .chat__footer
+      .chat___footer__form-body
+        %input.chat___footer__form-body_form-message{:name => "message[body]", :placeholder => "type a message", :type => "text"}
+        %label.chat___footer__form-body_file{:for => "message-image"}
+          %input.chat___footer__form-body-image{:name => "image[boy]", :type => "file"}
           %i.fa.fa-image
         %input.submit{:name => "commit", :type => "submit", :value => "send"}
 
