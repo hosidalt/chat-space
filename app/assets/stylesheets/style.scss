@@ -27,20 +27,20 @@
       position: absolute;
       top: 0;
       bottom: 0;
-      &_name{
+      &__name{
         font-size: 16px;
         font-weight: bold;
         color: #FFFFFF;
         position: relative;
         display: inline-block;
       }
-      &_new-group {
+      &__new-group {
         color: #FFFFFF;
         margin-left: 90px;
         position: relative;
         display: inline-block;
       }
-      &_user-edit {
+      &__user-edit {
         color: #FFFFFF;
         position: relative;
         display: inline-block;
@@ -52,15 +52,15 @@
     width: 260px;
     height: 85%;
     padding: 0 20px;
-    &___list {
+    &__list {
       height: 100%;
       color: #FFFFFF;
       &__group {
       padding: 20px;
-        &_group-name {
+        &__group-name {
           font-size: 15px;
         }
-        &_message{
+        &__message{
           font-size: 11px;
           padding-top: 5px;
         }
@@ -75,18 +75,18 @@
   width: calc(100vw - 300px);
   float: left;
 
-  &___header{
+  &__header{
     height: 15% ;
     border: 1px #eeeeee;
     &__group {
       padding: 0 40px;
-      &_group-name {
+      &__group-name {
         font-size: 20px;
         color: #333333;
         margin: 35px 0 15px;
         float: left;
       }
-      &_edit {
+      &__edit {
         color: #38AEF0;
         font-size: 15px;
         padding: 12.5px 20px;
@@ -103,27 +103,27 @@
     }
   }
 
-  &____body {
+  &__body {
     background-color: #AAAAAA;
     height: calc(100vh - 15% - 90px);
     padding: 0 40px;
-    &___list {
+    &__list {
       padding-top: 26px;
       &__message{
         padding: 20px 0;
-        &_name {
+        &__name {
           font-size: 16px;
           font-weight: bold;
           color: #434A54;
           float: left;
         }
-        &_time {
+        &__time {
           font-size: 12px;
           color: #999999;
           padding-left: 10px;
           float: left;
         }
-        &_body {
+        &__body {
           font-size: 14px;
           color: #434A54;
           padding-top: 10px;
@@ -133,13 +133,13 @@
     }
   }
 
-  &___footer {
+  &__footer {
     height: 90px;
     width: 100%;
     &__form-body {
       margin: 0 40px;
       position: relative;
-      &_form-message {
+      &__form-message {
         height: 50px;
         width: calc(100% - 135px);
         padding: 0 10px;
@@ -148,20 +148,21 @@
         font-size: 16px;
         color: #434A54
       }
-      &_file {
+      &__file {
         height: 50px;
         margin: 32px 125px 20px 0px;
         position: absolute;
         top: 0;
         right: 0;
-        .chat___footer__form-body-image {
+        &__image {
           position: absolute;
           top: 15px;
           left: 15px;
           display: none;
         }
       }
-      .submit{
+    }
+    .submit{
         color: #fff;
         width: 100px;
         height: 50px;
@@ -172,7 +173,6 @@
         top: 0;
         right: 0;
         border: none;
-      }
     }
   }
 }
