@@ -5,7 +5,7 @@
         =current_user.name
         / hosida
       / %a.user-side__content__new-group{:href =>""}
-      = link_to "#", class: 'user-side__content__new-group' do
+      = link_to new_group_path, class: 'user-side__content__new-group' do
         %i.fa.fa-pencil-square-o
       / %a.user-side__content__user-edit{:href =>""}
       = link_to edit_user_path(current_user), class: 'user-side__content__user-edit' do
