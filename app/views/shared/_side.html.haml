@@ -1,0 +1,54 @@
+/ / / ユーザー編集ページに遷移するためのパスを追加
+/ .side-bar
+/   .header
+/     %h3.header__name
+/       = current_user.name
+/     %ul.header__lists
+/       %li.list
+/         = link_to do
+/           = fa_icon 'pencil-square-o', class: 'icon'
+/       %li.list
+/         = link_to edit_user_path(current_user) do
+/           = fa_icon 'cog', class: 'icon'
+/   .groups
+/     .group
+/       .group__name
+/         グループ名
+/       .group__message
+/         新着メッセージ
+/     .group
+/       .group__name
+/         グループ名
+/       .group__message
+/         新着メッセージ
+/     .group
+/       .group__name
+/         グループ名
+/       .group__message
+/         新着メッセージ
+
+
+.side
+  .user-side
+    .user-side__content
+      .user-side__content__name
+        =current_user.name
+        / hosida
+      / %a.user-side__content__new-group{:href =>""}
+      = link_to "#", class: 'user-side__content__new-group' do
+        %i.fa.fa-pencil-square-o
+      / %a.user-side__content__user-edit{:href =>""}
+      = link_to "#", class: 'user-side__content__user-edit' do
+        %i.fa.fa-cog
+  .groups-side
+    .groups-side__list
+      .groups-side__list__group
+        .groups-side__list__group__group-name
+          39_weekend fla
+        .groups-side__list__group__message
+          こんばんわ
+      .groups-side__list__group
+        .groups-side__list__group__group-name
+          &bsol;(^o^)/
+        .groups-side__list__group__message
+          owata
