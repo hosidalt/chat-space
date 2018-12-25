@@ -1,28 +1,10 @@
-.side
-  .user-side
-    .user-side__content
-      .user-side__content__name
-        =current_user.name
-        / hosida
-      / %a.user-side__content__new-group{:href =>""}
-      = link_to new_group_path, class: 'user-side__content__new-group' do
-        %i.fa.fa-pencil-square-o
-      / %a.user-side__content__user-edit{:href =>""}
-      = link_to edit_user_path(current_user), class: 'user-side__content__user-edit' do
-        %i.fa.fa-cog
-  .groups-side
-    .groups-side__list
-      .groups-side__list__group
-        .groups-side__list__group__group-name
-          39_weekend fla
-        .groups-side__list__group__message
-          こんばんわ
-      .groups-side__list__group
-        .groups-side__list__group__group-name
-          &bsol;(^o^)/
-        .groups-side__list__group__message
-          owata
 
+/       .groups-side__list__group
+/         .groups-side__list__group__group-name
+/           &bsol;(^o^)/
+/         .groups-side__list__group__message
+/           owata
+= render partial: 'shared/side'
 
 .chat
   .chat__header
