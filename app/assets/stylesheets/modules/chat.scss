@@ -1,0 +1,212 @@
+// .chat {
+//   width: calc(100% - 300px);
+//   .header {
+//     box-sizing: border-box;
+//     height: 100px;
+//     padding: 0 40px;
+//     .left-header {
+//       float: left;
+//       &__title {
+//         color: #333;
+//         font-size: 20px;
+//         margin-top: 35px;
+//       }
+//       &__members {
+//         @include flexbox;
+//         color: $light_gray;
+//         font-size: 12px;
+//         margin-top: 15px;
+//         .member {
+//           display: inline-block;
+//           padding-right: 5px;
+//         }
+//       }
+//     }
+//     .right-header {
+//       border: 1px solid $light_blue;
+//       color: $light_blue;
+//       float: right;
+//       height: 40px;
+//       line-height: 40px;
+//       margin-top: 28px;
+//       padding: 0 20px;
+//       &__button {
+//         color: $light_blue;
+//         text-decoration: none;
+//       }
+//     }
+//   }
+
+//   .messages {
+//     background-color: #FAFAFA;
+//     box-sizing: border-box;
+//     padding: 46px 40px 0;
+//     height: calc(100% - 100px - 90px);
+//     .message {
+//       .upper-message {
+//         display: flex;
+//         &__user-name {
+//           color: $black;
+//           font-size: 16px;
+//           font-weight: bold;
+//         }
+//         &__date {
+//           color: $light_gray;
+//           font-size: 12px;
+//           padding-left: 10px;
+//         }
+//       }
+//       .lower-message {
+//         margin-top: 10px;
+//         &__content {
+//           color: $black;
+//           font-size: 14px;
+//           margin-bottom: 40px;
+//         }
+//       }
+//     }
+//   }
+
+//   .form {
+//     background-color: #DDDDDD;
+//     box-sizing: border-box;
+//     height: 90px;
+//     padding: 20px 50px 20px 40px;
+//     &__message {
+//       border: none;
+//       float: left;
+//       height: 50px;
+//       width: calc(100% - 150px);
+//     }
+//     &__mask {
+//       background-color: $white;
+//       float: left;
+//       height: 50px;
+//       padding-right: 10px;
+//       &__image {
+//         font-size: 20px;
+//         line-height: 50px;
+//       }
+//       .hidden {
+//         display: none;
+//       }
+//     }
+//     &__submit {
+//       background-color: $light_blue;
+//       border: none;
+//       color: $white;
+//       float: right;
+//       font-size: 16px;
+//       height: 50px;
+//       margin-left: 15px;
+//       padding: 0 30px;
+//     }
+//   }
+// }
+
+.chat {
+  height: 100vh;
+  width: calc(100vw - 300px);
+  float: left;
+
+  &__header{
+    height: 15% ;
+    border: 1px #eeeeee;
+    &__group {
+      padding: 0 40px;
+      &__group-name {
+        font-size: 20px;
+        color: #333333;
+        margin: 35px 0 15px;
+        float: left;
+      }
+      &__edit {
+        color: #38AEF0;
+        font-size: 15px;
+        padding: 12.5px 20px;
+        margin: 28px 20px 0;
+        border: 1px solid #38AEF0;
+        float: right;
+      }
+    }
+    &__member{
+      font-size: 12px;
+      color: #999999;
+      padding: 0 40px;
+      clear: both;
+    }
+  }
+
+  &__body {
+    background-color: #AAAAAA;
+    height: calc(100vh - 15% - 90px);
+    padding: 0 40px;
+    &__list {
+      padding-top: 26px;
+      &__message{
+        padding: 20px 0;
+        &__name {
+          font-size: 16px;
+          font-weight: bold;
+          color: #434A54;
+          float: left;
+        }
+        &__time {
+          font-size: 12px;
+          color: #999999;
+          padding-left: 10px;
+          float: left;
+        }
+        &__body {
+          font-size: 14px;
+          color: #434A54;
+          padding-top: 10px;
+          clear: both;
+        }
+      }
+    }
+  }
+
+  &__footer {
+    height: 90px;
+    width: 100%;
+    &__form-body {
+      margin: 0 40px;
+      position: relative;
+      &__form-message {
+        height: 50px;
+        width: calc(100% - 135px);
+        padding: 0 10px;
+        margin: 20px 0;
+        border: none;
+        font-size: 16px;
+        color: #434A54
+      }
+      &__file {
+        height: 50px;
+        margin: 32px 125px 20px 0px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        &__image {
+          position: absolute;
+          top: 15px;
+          left: 15px;
+          display: none;
+        }
+      }
+    }
+    .submit{
+        color: #fff;
+        width: 100px;
+        height: 50px;
+        text-align: center;
+        background-color: #38AEF0;
+        margin: 20px 0;
+        position: absolute;
+        top: 0;
+        right: 0;
+        border: none;
+    }
+  }
+}
