@@ -1,0 +1,63 @@
+
+.alert
+  チャットグループが作成されました。
+
+.side
+  .user-side
+    .user-side__content
+      .user-side__content__name
+        hosida
+      / %a.user-side__content__new-group{:href =>""}
+      = link_to "#", class: 'user-side__content__new-group' do
+        %i.fa.fa-pencil-square-o
+      / %a.user-side__content__user-edit{:href =>""}
+      = link_to "#", class: 'user-side__content__user-edit' do
+        %i.fa.fa-cog
+  .groups-side
+    .groups-side__list
+      .groups-side__list__group
+        .groups-side__list__group__group-name
+          39_weekend fla
+        .groups-side__list__group__message
+          こんばんわ
+      .groups-side__list__group
+        .groups-side__list__group__group-name
+          &bsol;(^o^)/
+        .groups-side__list__group__message
+          owata
+
+
+.chat
+  .chat__header
+    .chat__header__group.clearfix
+      .chat__header__group__group-name
+        39_weekend fla
+      / %a.chat__header__group__edit{:href =>""}edit
+      = link_to "edit", "#", class: 'chat__header__group__edit'
+    .chat__header__member
+      MEMBER: hosida
+  .chat__body
+    .chat__body__list
+      .chat__body__list__message.clearfix
+        .chat__body__list__message__name
+          hosida
+        .chat__body__list__message__time
+          2018/12/16 16:16:16
+        .chat__body__list__message__body
+          こんばんわ
+      .chat__body__list__message.clearfix
+        .chat__body__list__message__name
+          hosida
+        .chat__body__list__message__time
+          2018/12/16 16:16:58
+        .chat__body__list__message__body
+          (;ω;)
+
+  .chat__footer
+    .chat__footer__form-body
+      %input.chat__footer__form-body__form-message{:name => "message[body]", :placeholder => "type a message", :type => "text"}
+      %label.chat__footer__form-body__file{:for => "message-image"}
+        %input.chat__footer__form-body__file__image{:name => "image[boy]", :type => "file"}
+        %i.fa.fa-image
+      %input.submit{:name => "commit", :type => "submit", :value => "send"}
+
