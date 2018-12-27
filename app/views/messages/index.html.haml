@@ -32,11 +32,14 @@
         .chat__body__list__message__body
           (;ω;)
 
+
   .chat__footer
     .chat__footer__form-body
-      %input.chat__footer__form-body__form-message{:name => "message[body]", :placeholder => "type a message", :type => "text"}
-      %label.chat__footer__form-body__file{:for => "message-image"}
-        %input.chat__footer__form-body__file__image{:name => "image[boy]", :type => "file"}
-        %i.fa.fa-image
-      %input.submit{:name => "commit", :type => "submit", :value => "send"}
+      =form_for [@group, @message] do |f|
+        =f.text_field :content,class: "chat__footer__form-body__form-message", placeholder: "type a message"
+        =f.label :image, class: "chat__footer__form-body__file" do
+          =f.file_field :image, class: "chat__footer__form-body__file__image"
+          %i.fa.fa-image
+        =f.submit "Send", class: "submit"
+
 
