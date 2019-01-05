@@ -14,29 +14,24 @@
       / %a.chat__header__group__edit{:href =>""}edit
       = link_to 'edit', edit_group_path(current_user), class: 'chat__header__group__edit'
     .chat__header__member
-      MEMBER: hosida
+      MEMBER:
+      - @group.users.each do |user|
+        #{user.name}
+
+
   .chat__body
     .chat__body__list
-      .chat__body__list__message.clearfix
-        .chat__body__list__message__name
-          hosida
-        .chat__body__list__message__time
-          2018/12/16 16:16:16
-        .chat__body__list__message__body
-          こんばんわ
-      .chat__body__list__message.clearfix
-        .chat__body__list__message__name
-          hosida
-        .chat__body__list__message__time
-          2018/12/16 16:16:58
-        .chat__body__list__message__body
-          (;ω;)
+      = render @messages
+
+
 
   .chat__footer
     .chat__footer__form-body
-      %input.chat__footer__form-body__form-message{:name => "message[body]", :placeholder => "type a message", :type => "text"}
-      %label.chat__footer__form-body__file{:for => "message-image"}
-        %input.chat__footer__form-body__file__image{:name => "image[boy]", :type => "file"}
-        %i.fa.fa-image
-      %input.submit{:name => "commit", :type => "submit", :value => "send"}
+      =form_for [@group, @message] do |f|
+        =f.text_field :content,class: "chat__footer__form-body__form-message", placeholder: "type a message"
+        =f.label :image, class: "chat__footer__form-body__file" do
+          =f.file_field :image, class: "chat__footer__form-body__file__image"
+          %i.fa.fa-image
+        =f.submit "Send", class: "submit"
+
 
