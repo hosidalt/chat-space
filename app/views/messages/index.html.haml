@@ -14,7 +14,10 @@
       / %a.chat__header__group__edit{:href =>""}edit
       = link_to 'edit', edit_group_path(current_user), class: 'chat__header__group__edit'
     .chat__header__member
-      MEMBER: hosida
+      MEMBER:
+      - @group.users.each do |user|
+        #{user.name}
+
 
   .chat__body
     .chat__body__list
