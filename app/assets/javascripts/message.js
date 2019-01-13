@@ -35,10 +35,7 @@ $(function(){
         var html = buildHTML(data);
         $('.chat__body__list').append(html)
         $('.submit').attr("disabled",false)
-        $('.chat__footer__form-body__form-message').val('')
-        function getScrollTop(){
-          $('.chat__body')
-        }
+        $('.new_message')[0].reset();
         $('.chat__body').animate({scrollTop: $('.chat__body')[0].scrollHeight}, 'fast');
       })
       .fail(function(){
