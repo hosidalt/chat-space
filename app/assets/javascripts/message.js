@@ -41,5 +41,8 @@ $(function(){
         }
         $('.chat__body').animate({scrollTop: $('.chat__body')[0].scrollHeight}, 'fast');
       })
-
+      .fail(function(){
+        alert('error');
+      })
+  })
 });
