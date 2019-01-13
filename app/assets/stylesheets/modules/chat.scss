@@ -35,6 +35,7 @@
     background-color: #AAAAAA;
     height: calc(100vh - 15% - 90px);
     padding: 0 40px;
+    overflow: scroll;
     &__list {
       padding-top: 26px;
       &__message{
