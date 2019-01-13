@@ -39,5 +39,7 @@ $(function(){
         function getScrollTop(){
           $('.chat__body')
         }
+        $('.chat__body').animate({scrollTop: $('.chat__body')[0].scrollHeight}, 'fast');
+      })
 
-
+});
