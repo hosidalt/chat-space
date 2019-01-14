@@ -31,6 +31,13 @@ function appendUser(user){
       alert('ユーザー検索は失敗しました');
     })
 
+function buildHTML(name){
+  var html =``
+}
+
+  $(document).on('click','.user-search-add',function(){
+    buildHTML()
+  })
 
 
   });
