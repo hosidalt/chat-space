@@ -1,13 +1,13 @@
 $(function(){
 
-function appendUser(user){
+function buildAppendUserHTML(user){
   var html = `<div class="chat-group-user clearfix">
                 <p class="chat-group-user__name">${user.name}</p>
                   <a class= "user-search-add chat-group-user__btn chat-group-user__btn--add" data-user-id = ${user.id} data-user-name = ${user.name} > 追加
               </div>`
   return html;
   };
-function appendUserName(name ,id){
+function appendUsetNameToMember(name ,id){
   var html =`<div class='chat-group-user clearfix js-chat-member'>
                <input name='group[user_ids][]' type='hidden' value= ${id}>
                <p class='chat-group-user__name'>${name}</p>
@@ -28,15 +28,13 @@ function appendUserName(name ,id){
       dataType: 'json'
     })
 
-    .done(function(data){
-
-      if(data.length !== 0){
-        data.forEach(function(user){
-          var html = appendUser(user);
+    .done(function(users){
+      if(users.length !== 0){
+        users.forEach(function(user){
+          var html = buildAppendUserHTML(user);
           $('.user-search-result').append(html)
         });
       }
-      // $('#user-search-field')[0].reset();
     })
     .fail(function(){
       alert('ユーザー検索は失敗しました');
@@ -48,7 +46,7 @@ function appendUserName(name ,id){
   $('.user-search-result').on('click','.user-search-add',function(){
     var name = $(this).data("user-name");
     var id = $(this).data("user-id");
-    var html = appendUserName(name,id);
+    var html = appendUsetNameToMember(name,id);
     $('#user-name').append(html);
     // 検索結果から削除
     $(this).parent().remove();
