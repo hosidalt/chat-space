@@ -1,8 +1,12 @@
 $(function(){
+
+  $(function(){
+    setInterval(update,50000);
+  });
+
   function buildHTML(message){
    const addImage = (message.image)?`<img = "${message.image}">`:''
-   const html = `<div class="chat__body__list">
-                 <div class= "chat__body__list__message.clearfix">
+   const html = `<div class= "chat__body__list__message.clearfix">
                    <div class= "chat__body__list__message__name">
                      ${message.user_name}
                    </div>
@@ -13,11 +17,10 @@ $(function(){
                  <div class= "chat__body__list__message__body">
                    ${message.content}
                  <img src="${addImage}">
-                 </div>
                </div>`
-
     return html;
   }
+
   $('#new_message').on('submit',function(e){
     e.preventDefault();
       var formData = new FormData(this);
