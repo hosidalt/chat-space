@@ -1,8 +1,33 @@
 $(function(){
+
+  function update() {
+    var message_latest = $('.chat__body__list__message:last').data('id')
+
+    $.ajax({
+      type: "GET",
+      url: location.href,
+      data: {
+        message: {id: message_latest}
+      },
+      dataType: "json"
+    })
+
+    .done(function(messages){
+      $.each(messages,function(num,message){
+        var html = buildHTML(message);
+        $('.chat__body__list').append(html)
+        $('.chat__body').animate({scrollTop: $('.chat__body')[0].scrollHeight}, 'fast');
+      })
+    })
+    .fail(function() {
+      alert('error');
+    });
+  };
+
+
   function buildHTML(message){
    const addImage = (message.image)?`<img = "${message.image}">`:''
-   const html = `<div class="chat__body__list">
-                 <div class= "chat__body__list__message.clearfix">
+   const html = `<div class= "chat__body__list__message clearfix" data-id = ${message.id}>
                    <div class= "chat__body__list__message__name">
                      ${message.user_name}
                    </div>
@@ -13,11 +38,14 @@ $(function(){
                  <div class= "chat__body__list__message__body">
                    ${message.content}
                  <img src="${addImage}">
-                 </div>
                </div>`
-
     return html;
   }
+  // 自動更新
+  $(function(){
+    setInterval(update,5000);
+  });
+
   $('#new_message').on('submit',function(e){
     e.preventDefault();
       var formData = new FormData(this);
