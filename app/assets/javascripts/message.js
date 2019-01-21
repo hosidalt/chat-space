@@ -2,7 +2,7 @@ $(function(){
 
   function update() {
     var message_latest = $('.chat__body__list__message:last').data('id')
-
+    console.log('hello')
     $.ajax({
       type: "GET",
       url: location.href,
@@ -20,7 +20,7 @@ $(function(){
       })
     })
     .fail(function() {
-      alert('error');
+      alert('hello');
     });
   };
 
@@ -41,10 +41,15 @@ $(function(){
                </div>`
     return html;
   }
-  // 自動更新
-  $(function(){
-    setInterval(update,5000);
-  });
+  // 自動更新 location.hrefが'/groups/番号/messagesg'だけで動くようにif文で条件分岐
+  var url = location.pathname;
+  var group_id = $(".chat__header").data('group-id')
+  console.log(url)
+  if( url == `/groups/${group_id}/messages`) {
+    $(function(){
+      setInterval(update,5000);
+    });
+  }
 
   $('#new_message').on('submit',function(e){
     e.preventDefault();
