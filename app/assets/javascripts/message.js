@@ -44,7 +44,6 @@ $(function(){
   // 自動更新 location.hrefが'/groups/番号/messagesg'だけで動くようにif文で条件分岐
   var url = location.pathname;
   var group_id = $(".chat__header").data('group-id')
-  console.log(url)
   if( url == `/groups/${group_id}/messages`) {
     $(function(){
       setInterval(update,5000);
