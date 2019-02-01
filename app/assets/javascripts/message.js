@@ -26,7 +26,7 @@ $(function(){
 
 
   function buildHTML(message){
-   const addImage = (message.image)?`<img = "${message.image}">`:''
+   const addImage = (message.image)?`<img src= "${message.image}">`:''
    const html = `<div class= "chat__body__list__message clearfix" data-id = ${message.id}>
                    <div class= "chat__body__list__message__name">
                      ${message.user_name}
