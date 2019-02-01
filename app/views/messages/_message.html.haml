@@ -7,5 +7,5 @@
   - if message.content.present?
     %p.chat__body__list__message__body
       =message.content
-  = image_tag message.image.url, class: 'message__image' if message.image.present?
+  = image_tag message.image, class: 'message__image' if message.image.present?
 

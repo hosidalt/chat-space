@@ -1,8 +1,8 @@
 $(function(){
 
   function update() {
-    var message_latest = $('.chat__body__list__message:last').data('id')
-    console.log('hello')
+    var message_latest = $('.chat__body__list__message:last').data('id') || 0;
+    console.log(message_latest)
     $.ajax({
       type: "GET",
       url: location.href,
@@ -44,11 +44,11 @@ $(function(){
   // 自動更新 location.hrefが'/groups/番号/messagesg'だけで動くようにif文で条件分岐
   var url = location.pathname;
   var group_id = $(".chat__header").data('group-id')
-  if( url == `/groups/${group_id}/messages`) {
-    $(function(){
-      setInterval(update,5000);
-    });
-  }
+  // if( url == `/groups/${group_id}/messages`) {
+  //   $(function(){
+  //     setInterval(update,5000);
+  //   });
+  // }
 
   $('#new_message').on('submit',function(e){
     e.preventDefault();

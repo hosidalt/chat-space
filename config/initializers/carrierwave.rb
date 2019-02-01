@@ -3,15 +3,20 @@ require 'carrierwave/storage/file'
 require 'carrierwave/storage/fog'
 
 CarrierWave.configure do |config|
-  config.storage = :fog
+  if Rails.env.development? || Rails.env.test?
+    config.storage = :file
+  else
+    config.storage = :fog
+  end
   config.fog_provider = 'fog/aws'
   config.fog_credentials = {
     provider: 'AWS',
     aws_access_key_id: Rails.application.secrets.aws_access_key_id,
     aws_secret_access_key: Rails.application.secrets.aws_secret_access_key,
-    region: '※自分で調べて入れてください'
+    region: 'ap-northeast-1'
   }
 
-  config.fog_directory  = 'chatspace.ver'
-  config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/chatspace.ver'
+  config.fog_directory  = 'chatspacev'
+  config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/chatspacev'
+
 end
