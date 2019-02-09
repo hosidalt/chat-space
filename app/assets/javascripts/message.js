@@ -53,7 +53,11 @@ $(function(){
   $('#new_message').on('submit',function(e){
     e.preventDefault();
       var formData = new FormData(this);
-
+      var message = $("#message_content").val();
+      var image = $("#message_image").val();
+      if (message == "" && image == ""){
+         return alert("messageを入力してください。")
+      }
       var url = $(this).attr('action');
       $.ajax({
         type: "POST",
@@ -75,3 +79,4 @@ $(function(){
       })
   })
 });
+
