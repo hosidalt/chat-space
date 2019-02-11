@@ -19,6 +19,11 @@ function appendUsetNameToMember(name ,id){
 
     var current_user = $("#current-user").val();
     var selected_users = [current_user]
+    $(".group-users").each(function(i,ele){
+      selected_users.push(ele.value);
+      console.log(ele.value)
+    });
+    // console.log(selected_users)
 
 
 

@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
   def index
-    p params[:selected_users]
+    # p params[:selected_users]
     @users = User.where('name LIKE(?) AND id not in (?)',"%#{params[:keyword]}%", params[:selected_users])
     respond_to do |format|
       format.json
